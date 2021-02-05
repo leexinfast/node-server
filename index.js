@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // conn.connect();
  
 /* 监听端口 */
-app.listen(8088, () => {
+app.listen(3000, () => {
     console.log('——————————服务已启动——————————');
 })
  
