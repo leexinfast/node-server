@@ -31,18 +31,28 @@ app.get('/', (req, res) => {
     res.send('<p style="color:red">服务已启动</p>');
 })
  
-app.get('/api/getUserList', (req, res) => {
-    res.json({
-        code:0,
-        data:{
-            a:1,
-            b:2
-        },
-        message:'success'
-    })
-    // const sqlStr = 'SELECT * FROM users'
-    // conn.query(sqlStr, (error, results) => {
-    //     if (error) return res.json({ code: 10001, message: error})
-    //     res.json({ code: 10000, message: results})
-    // })
+// app.get('/api/getUserList', (req, res) => {
+//     res.json({
+//         code:0,
+//         data:{
+//             a:1,
+//             b:2
+//         },
+//         message:'success'
+//     })
+//     const sqlStr = 'SELECT * FROM users'
+//     conn.query(sqlStr, (error, results) => {
+//         if (error) return res.json({ code: 10001, message: error})
+//         res.json({ code: 10000, message: results})
+//     })
+// })
+app.post('/api/getUserInfo',(req,res,next) => {
+    if (req.body.wen) {
+        res.json({
+            code:200,
+            message:'success'
+        });
+    } else {
+        res.json({ code: 10001, message: 'error'});
+    }
 })
